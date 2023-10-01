@@ -31,7 +31,7 @@ const LineChart: T_LineChart = ({ data }) => {
 
     return (
         <div className="card">
-            <Line data={data} options={options} width={654} height={260} />
+            <Line data={data} options={options} />
         </div>
     );
 };
