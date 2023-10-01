@@ -27,7 +27,7 @@
 
 .nav-section > img:hover,
 .nav-section > img.active {
-    background: var(--light-blue);
+    background: #e9efff;
 }
 
 .btn-circle {

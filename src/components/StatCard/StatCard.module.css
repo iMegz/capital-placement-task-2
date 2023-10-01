@@ -1,0 +1,39 @@
+.stat-card-i {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+}
+
+.title-section.horizontal {
+    justify-content: space-between;
+}
+
+.title-section {
+    display: flex;
+}
+
+.vertical {
+    font-size: 15px;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    font-size: 15px;
+}
+
+.vertical .value {
+    font-size: 20px;
+}
+
+.prev-period {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.prev-period-value {
+    display: flex;
+    gap: 8px;
+}

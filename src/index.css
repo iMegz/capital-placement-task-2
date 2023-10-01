@@ -1,6 +1,7 @@
 @font-face {
-    font-family: "inter";
-    src: url("./fonts/inter.ttf");
+    font-family: "Poppins";
+    src: url("./fonts/Poppins/Poppins-Light.ttf");
+    font-weight: 100;
 }
 
 @font-face {
@@ -21,15 +22,34 @@
     font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
-:root {
-    --blue-gray: #f5f7ff;
-    --light-blue: #e9efff;
-    --blue: #1d4ed8;
-
-    --blue-filter: invert(21%) sepia(81%) saturate(2672%) hue-rotate(217deg)
-        brightness(99%) contrast(89%);
-}
-
 body {
     background-color: var(--blue-gray);
+}
+
+/* Card */
+.card {
+    padding: 24px 32px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 2px 4px 40px 2px #cddfff26;
+}
+
+/* Badges */
+.badge-sm-blue,
+.badge-sm-pink {
+    display: flex;
+    align-items: center;
+    height: 15px;
+    padding: 0 4px;
+    border-radius: 16px;
+    font-size: 10px;
+    font-weight: 100;
+}
+
+.badge-sm-blue {
+    background-color: #f0f6ff;
+}
+
+.badge-sm-pink {
+    background-color: #fff3f0;
 }

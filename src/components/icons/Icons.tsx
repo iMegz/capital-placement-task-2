@@ -8,6 +8,8 @@ import notebook from "../../assets/notebook.svg";
 import rightArrow from "../../assets/right-arrow.svg";
 import sesttings from "../../assets/sesttings.svg";
 import share from "../../assets/share.svg";
+import trendDown from "../../assets/trend-down.svg";
+import trendUp from "../../assets/trend-up.svg";
 
 type T_Icon = React.FC<React.SVGAttributes<HTMLOrSVGElement>>;
 
@@ -49,6 +51,14 @@ export const SesttingsIcon: T_Icon = (props) => {
 
 export const ShareIcon: T_Icon = (props) => {
     return <img {...props} src={share} alt="Share" />;
+};
+
+export const TrendDownIcon: T_Icon = (props) => {
+    return <img {...props} src={trendDown} alt="Trend down" />;
+};
+
+export const TrendUpIcon: T_Icon = (props) => {
+    return <img {...props} src={trendUp} alt="Trend up" />;
 };
 
 const Icon: T_Icon = (props) => {
