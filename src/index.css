@@ -1,7 +1,13 @@
 @font-face {
     font-family: "Poppins";
-    src: url("./fonts/Poppins/Poppins-Light.ttf");
+    src: url("./fonts/Poppins/Poppins-ExtraLight.ttf");
     font-weight: 100;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins/Poppins-Light.ttf");
+    font-weight: 200;
 }
 
 @font-face {
@@ -20,6 +26,12 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --ExtraLight: 100;
+    --Light: 200;
+    --Bold: bold;
 }
 
 body {
@@ -43,7 +55,7 @@ body {
     padding: 0 4px;
     border-radius: 16px;
     font-size: 10px;
-    font-weight: 100;
+    font-weight: var(--Light);
 }
 
 .badge-sm-blue {
