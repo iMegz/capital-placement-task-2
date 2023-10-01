@@ -1,0 +1,13 @@
+.opportunity-overview {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    height: fit-content;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex-grow: 1;
+}
