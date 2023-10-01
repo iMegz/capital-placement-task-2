@@ -3,6 +3,7 @@
     flex-direction: column;
     flex-grow: 1;
     gap: 16px;
+    min-height: 135px;
 }
 
 .title-section.horizontal {

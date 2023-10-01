@@ -1,4 +1,5 @@
 .report-class {
     display: flex;
     gap: 32px;
+    height: 177px;
 }

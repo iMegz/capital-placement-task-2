@@ -45,18 +45,24 @@ const OpportunityOverview = () => {
         <section className={style["opportunity-overview"]}>
             {/* Left side */}
             <div className={style["side"]}>
+                {/* Report class */}
                 <ReportClass data={reportData} />
+
+                {/* Line chart */}
                 <LineChart data={data} />
             </div>
 
             {/* Right side */}
             <div className={style["side"]}>
+                {/* Total Candidate Flow */}
                 <TotalCandidateFlow
                     total={4567}
                     data={flowData}
                     qualified={78}
                     disqualified={22}
                 />
+
+                {/* Bottom stats */}
                 <div style={{ display: "flex", gap: "32px" }}>
                     <StatCard {...recommended} />
                     <StatCard {...interview} />
