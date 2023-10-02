@@ -49,7 +49,13 @@ const OpportunityOverview = () => {
                 <ReportClass data={reportData} />
 
                 {/* Line chart */}
-                <LineChart data={data} />
+                <LineChart
+                    data={data}
+                    range={{
+                        start: new Date("01/01/2023"),
+                        end: new Date("07/01/2023"),
+                    }}
+                />
             </div>
 
             {/* Right side */}

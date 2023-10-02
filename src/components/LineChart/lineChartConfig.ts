@@ -66,7 +66,7 @@ export function prepareChartData(
     };
 }
 
-export function prepareOptions(min: number, max: number) {
+export function prepareOptions(min: number, max: number): any {
     const options = { ...defaultOptions };
     options.scales.y.min = min;
     options.scales.y.max = max;

@@ -1,37 +1,41 @@
 import "chart.js/auto";
 
 import { Line } from "react-chartjs-2";
-import { T_LineChartData } from "../../types";
+import { T_QualifedData } from "../../types";
 import style from "./LineChart.module.css";
-import { getRange } from "../utils/utils";
+import { prepareChartData, prepareOptions } from "./lineChartConfig";
+import { getChartRange } from "../utils/utils";
+import Select, { T_SelectOption } from "../Select/Select";
 
 type T_LineChart = React.FC<I_LineChartProps>;
 
 interface I_LineChartProps {
-    data: T_LineChartData;
+    data: T_QualifedData[];
+    range: { start: Date; end: Date };
 }
 
-const LineChart: T_LineChart = ({ data }) => {
-    const [min, max] = getRange(data);
-    // const font = { size: 12, family: "Poppins" };
-    const font = {};
-    const options: any = {
-        scales: {
-            x: { ticks: { minRotation: 34.58, font } },
-            y: { min, max, ticks: { maxTicksLimit: 3, font } },
-        },
-        plugins: {
-            legend: {
-                labels: { usePointStyle: true, font },
-                position: "top",
-                align: "end",
-            },
-        },
-    };
+const steps: T_SelectOption[] = [
+    { value: "applied", label: "Applied" },
+    { value: "recommended", label: "Recommended" },
+    { value: "interview", label: "Interview" },
+    { value: "offer", label: "Offer" },
+    { value: "hired", label: "Hired" },
+    { value: "rejected", label: "Rejected" },
+];
+
+const LineChart: T_LineChart = ({ data, range }) => {
+    const chartData = prepareChartData(data, range);
+    const [min, max] = getChartRange(chartData);
+    const options = prepareOptions(min, max);
 
     return (
-        <div className="card">
-            <Line data={data} options={options} />
+        <div className={`card ${style["chart-card"]}`}>
+            <Select
+                options={steps}
+                className={style.select}
+                selected="recommended"
+            />
+            <Line data={chartData} options={options} />
         </div>
     );
 };

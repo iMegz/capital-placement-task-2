@@ -1,0 +1,9 @@
+.chart-card {
+    position: relative;
+}
+
+.select {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+}
