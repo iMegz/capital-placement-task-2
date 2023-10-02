@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import style from "./Select.module.css";
 import Dropdown from "./Dropdown";
 import { DownArrowIcon, UpArrowIcon } from "../icons/Icons";
+import useCollapse from "../../hooks/useCollapse";
 
 type T_Select = React.FC<I_SelectProps>;
 
@@ -22,16 +23,8 @@ const Select: T_Select = (props) => {
     const { options, selected, className, onChange, ...rest } = props;
     const defaultClassName = `${style.select} ${className}`;
 
-    const ref = useRef<HTMLDivElement>(null);
+    const { expand, setExpand, ref } = useCollapse();
     const [value, setValue] = useState(getValueOrLabel(selected));
-    const [expand, setExpand] = useState(false);
-
-    useEffect(() => {
-        document.addEventListener("mousedown", handleOnClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleOnClickOutside);
-        };
-    }, []);
 
     function getValueOrLabel(
         selected?: string,
@@ -51,12 +44,6 @@ const Select: T_Select = (props) => {
         console.log(value);
 
         if (onChange) onChange(value);
-    }
-
-    function handleOnClickOutside(e: any) {
-        if (ref.current && !ref.current.contains(e.target)) {
-            setExpand(false);
-        }
     }
 
     // Renderers

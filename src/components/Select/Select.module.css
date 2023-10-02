@@ -3,15 +3,12 @@
     position: relative;
     height: fit-content;
     width: max-content;
+    font-size: 12px;
 }
 
 .selection-btn {
     display: flex;
     gap: 8px;
-}
-
-.selected {
-    font-size: 12px;
 }
 
 /* Dropdown */
