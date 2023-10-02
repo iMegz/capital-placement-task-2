@@ -41,8 +41,6 @@ const Select: T_Select = (props) => {
     function hanldleOnChange(value: string) {
         setValue(value);
         setExpand(false);
-        console.log(value);
-
         if (onChange) onChange(value);
     }
 

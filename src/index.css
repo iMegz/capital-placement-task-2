@@ -1,4 +1,9 @@
 @font-face {
+    font-family: "inter";
+    src: url("./fonts/inter.ttf");
+}
+
+@font-face {
     font-family: "Poppins";
     src: url("./fonts/Poppins/Poppins-ExtraLight.ttf");
     font-weight: 100;

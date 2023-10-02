@@ -1,4 +1,5 @@
 import calender from "../../assets/calendar.svg";
+import calender2 from "../../assets/calender2.svg";
 import document from "../../assets/document.svg";
 import downArrow from "../../assets/down-arrow.svg";
 import group from "../../assets/group.svg";
@@ -17,6 +18,10 @@ type T_Icon = React.FC<React.SVGAttributes<HTMLOrSVGElement>>;
 
 export const CalendarIcon: T_Icon = (props) => {
     return <img {...props} src={calender} alt="Calendar" />;
+};
+
+export const Calendar2Icon: T_Icon = (props) => {
+    return <img {...props} src={calender2} alt="Calendar" />;
 };
 
 export const DocumentIcon: T_Icon = (props) => {

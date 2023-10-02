@@ -1,8 +1,20 @@
 .opportunity-overview {
     width: 100%;
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    gap: 24px;
     height: fit-content;
+}
+
+.header {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.stats {
+    display: flex;
+    gap: 32px;
 }
 
 .side {

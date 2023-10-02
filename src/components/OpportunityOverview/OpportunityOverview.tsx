@@ -1,77 +1,57 @@
+import DataRangePicker from "../DataRangePicker/DataRangePicker";
 import LineChart from "../LineChart/LineChart";
 import ReportClass from "../ReportClass/ReportClass";
-import StatCard, { I_StatCardIProps } from "../StatCard/StatCard";
+import StatCard from "../StatCard/StatCard";
 import TotalCandidateFlow from "../TotalCandidateFlow/TotalCandidateFlow";
 import style from "./OpportunityOverview.module.css";
-import { data } from "../utils/utils";
+import {
+    data,
+    flowData,
+    interview,
+    recommended,
+    reportData,
+} from "./opportunityOverviewData";
 
 const OpportunityOverview = () => {
-    const reportData: I_StatCardIProps[] = [
-        {
-            title: "Applied",
-            value: 3122,
-            prevValue: 1590,
-            percentDifference: 15,
-        },
-        { title: "Offer", value: 183, prevValue: 71, percentDifference: 15 },
-        { title: "Hired", value: 98, prevValue: 167, percentDifference: -15 },
-    ];
-
-    const flowData = {
-        applied: { qualified: 3122, disqualified: 1445 },
-        recommended: { qualified: 2164, disqualified: 958 },
-        interview: { qualified: 443, disqualified: 1721 },
-        offer: { qualified: 183, disqualified: 260 },
-        hired: { qualified: 118, disqualified: 65 },
-    };
-
-    const recommended: I_StatCardIProps = {
-        title: "Recommended",
-        value: 2164,
-        prevValue: 90,
-        percentDifference: 15,
-        type: "horizontal",
-    };
-
-    const interview: I_StatCardIProps = {
-        title: "Interview",
-        value: 443,
-        prevValue: 90,
-        percentDifference: 15,
-        type: "horizontal",
-    };
-
     return (
         <section className={style["opportunity-overview"]}>
-            {/* Left side */}
-            <div className={style["side"]}>
-                {/* Report class */}
-                <ReportClass data={reportData} />
+            {/* Header */}
+            <header className={style.header}>
+                <h1>Opportunity Overview</h1>
+                <DataRangePicker />
+            </header>
 
-                {/* Line chart */}
-                <LineChart
-                    data={data}
-                    range={{
-                        start: new Date("01/01/2023"),
-                        end: new Date("07/01/2023"),
-                    }}
-                />
-            </div>
+            <div className={style.stats}>
+                {/* Left side */}
+                <div className={style["side"]}>
+                    {/* Report class */}
+                    <ReportClass data={reportData} />
 
-            {/* Right side */}
-            <div className={style["side"]}>
-                {/* Total Candidate Flow */}
-                <TotalCandidateFlow
-                    total={4567}
-                    data={flowData}
-                    qualified={78}
-                    disqualified={22}
-                />
+                    {/* Line chart */}
+                    <LineChart
+                        data={data}
+                        range={{
+                            start: new Date("01/01/2023"),
+                            end: new Date("07/01/2023"),
+                        }}
+                    />
+                </div>
 
-                {/* Bottom stats */}
-                <div style={{ display: "flex", gap: "32px" }}>
-                    <StatCard {...recommended} />
-                    <StatCard {...interview} />
+                {/* Right side */}
+                <div className={style["side"]}>
+                    {/* Total Candidate Flow */}
+                    <TotalCandidateFlow
+                        total={4567}
+                        data={flowData}
+                        qualified={78}
+                        disqualified={22}
+                    />
+
+                    {/* Bottom stats */}
+                    <div style={{ display: "flex", gap: "32px" }}>
+                        <StatCard {...recommended} />
+                        <StatCard {...interview} />
+                    </div>
                 </div>
             </div>
         </section>

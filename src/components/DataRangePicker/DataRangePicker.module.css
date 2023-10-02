@@ -1,0 +1,51 @@
+.data-range-picker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5.5px 16px;
+    border-radius: 16px;
+    background-color: #f0f3fb;
+    font-family: "inter", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: max-content;
+    cursor: pointer;
+}
+
+.date {
+    appearance: none;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.data-range-picker input[type="date"] {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 8px;
+    z-index: -10;
+}
+
+.picker-title {
+    width: calc(100% - 16px);
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    background-color: white;
+    padding: 6px 12px;
+    border-radius: 16px;
+    border: 1px solid #00000025;
+    box-shadow: 4px 0 25px 0 #00000025;
+    text-transform: capitalize;
+    animation: comeDown 0.2s ease-in-out;
+}
+
+@keyframes comeDown {
+    from {
+        transform: translateY(-6px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
