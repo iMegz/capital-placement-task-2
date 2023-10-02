@@ -1,4 +1,4 @@
-import { T_LineChartData, T_QualifedData } from "../../types";
+import { T_LineChartData, T_MonthNumber, T_QualifedData } from "../../types";
 import { getMonthsInRange, monthNumberToString } from "../utils/utils";
 
 const qualifiedStyle = {
@@ -50,7 +50,9 @@ export function prepareChartData(
     );
 
     return {
-        labels: filteredData.map((value) => monthNumberToString(value.month)),
+        labels: filteredData.map((value) =>
+            monthNumberToString(value.month as T_MonthNumber)
+        ),
         datasets: [
             {
                 label: "Qualified",

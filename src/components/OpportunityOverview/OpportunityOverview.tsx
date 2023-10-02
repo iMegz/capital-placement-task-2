@@ -1,4 +1,7 @@
-import DataRangePicker from "../DataRangePicker/DataRangePicker";
+import { useState } from "react";
+import DataRangePicker, {
+    T_RangeStr,
+} from "../DataRangePicker/DataRangePicker";
 import LineChart from "../LineChart/LineChart";
 import ReportClass from "../ReportClass/ReportClass";
 import StatCard from "../StatCard/StatCard";
@@ -13,12 +16,30 @@ import {
 } from "./opportunityOverviewData";
 
 const OpportunityOverview = () => {
+    const [date, setDate] = useState({
+        start: new Date("01/01/2023"),
+        end: new Date("07/01/2023"),
+    });
+
+    function handleOnDateChange(range: T_RangeStr) {
+        setDate((_) => {
+            return { start: new Date(range.start), end: new Date(range.start) };
+        });
+        console.log(date);
+    }
+
     return (
         <section className={style["opportunity-overview"]}>
             {/* Header */}
             <header className={style.header}>
                 <h1>Opportunity Overview</h1>
-                <DataRangePicker />
+                <DataRangePicker
+                    onChange={handleOnDateChange}
+                    range={{
+                        start: date.start,
+                        end: date.end,
+                    }}
+                />
             </header>
 
             <div className={style.stats}>
