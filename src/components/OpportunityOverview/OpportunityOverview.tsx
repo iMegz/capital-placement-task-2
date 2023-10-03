@@ -23,9 +23,8 @@ const OpportunityOverview = () => {
 
     function handleOnDateChange(range: T_RangeStr) {
         setDate((_) => {
-            return { start: new Date(range.start), end: new Date(range.start) };
+            return { start: new Date(range.start), end: new Date(range.end) };
         });
-        console.log(date);
     }
 
     return (
@@ -52,8 +51,8 @@ const OpportunityOverview = () => {
                     <LineChart
                         data={data}
                         range={{
-                            start: new Date("01/01/2023"),
-                            end: new Date("07/01/2023"),
+                            start: date.start,
+                            end: date.end,
                         }}
                     />
                 </div>
