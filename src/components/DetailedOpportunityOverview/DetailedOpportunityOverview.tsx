@@ -3,6 +3,7 @@ import Program from "../Program/Program";
 import Search from "../Search/Search";
 import Sort from "../Sort/Sort";
 import style from "./DetailedOpportunityOverview.module.css";
+import { data } from "./detailedOpportunityOverviewData";
 
 const DetailedOpportunityOverview = () => {
     return (
@@ -17,7 +18,7 @@ const DetailedOpportunityOverview = () => {
                 <Button style={{ flexGrow: 0.2 }}>Export All As CSV</Button>
             </div>
 
-            <Program />
+            <Program data={data} />
         </div>
     );
 };
