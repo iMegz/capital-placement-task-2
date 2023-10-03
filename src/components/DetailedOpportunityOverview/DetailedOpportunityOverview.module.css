@@ -1,0 +1,10 @@
+.detailed-opportunity-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.control {
+    display: flex;
+    gap: 32px;
+}

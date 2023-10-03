@@ -1,4 +1,5 @@
 import "./App.css";
+import DetailedOpportunityOverview from "./components/DetailedOpportunityOverview/DetailedOpportunityOverview";
 import OpportunityOverview from "./components/OpportunityOverview/OpportunityOverview";
 import Sidebar from "./components/Sidebar/Sidebar";
 function App() {
@@ -7,6 +8,7 @@ function App() {
             <Sidebar />
             <main className="main">
                 <OpportunityOverview />
+                <DetailedOpportunityOverview />
             </main>
         </div>
     );

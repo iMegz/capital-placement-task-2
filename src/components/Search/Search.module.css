@@ -1,0 +1,17 @@
+.search {
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid #f3f3f3;
+    background-color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search > input {
+    border: none;
+    background-color: transparent;
+    outline: transparent;
+    flex: 1;
+}
