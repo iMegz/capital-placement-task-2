@@ -1,5 +1,5 @@
 import { TrendDownIcon, TrendUpIcon } from "../icons/Icons";
-import { formatNumber } from "../utils/utils";
+import { formatNumber } from "../../utils/utils";
 import style from "./StatCard.module.css";
 
 type T_StatCard = React.FC<I_StatCardIProps>;

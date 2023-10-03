@@ -1,5 +1,5 @@
 import { I_ApplicationFlowSteps, T_ApplicationFlowStepsKey } from "../../types";
-import { formatNumber } from "../utils/utils";
+import { formatNumber } from "../../utils/utils";
 import style from "./TotalCandidateFlow.module.css";
 
 type T_TotalCandidateFlow = React.FC<I_TotalCandidateFlowIProps>;

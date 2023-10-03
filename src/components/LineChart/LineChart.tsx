@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import { T_QualifedData } from "../../types";
 import style from "./LineChart.module.css";
 import { prepareChartData, prepareOptions } from "./lineChartConfig";
-import { getChartRange } from "../utils/utils";
+import { getChartRange } from "../../utils/utils";
 import Select, { T_SelectOption } from "../Select/Select";
 
 type T_LineChart = React.FC<I_LineChartProps>;

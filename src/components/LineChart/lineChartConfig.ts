@@ -1,5 +1,5 @@
 import { T_LineChartData, T_MonthNumber, T_QualifedData } from "../../types";
-import { getMonthsInRange, monthNumberToString } from "../utils/utils";
+import { getMonthsInRange, monthNumberToString } from "../../utils/utils";
 
 const qualifiedStyle = {
     borderColor: "#FBE38E",

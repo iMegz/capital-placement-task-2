@@ -1,4 +1,4 @@
-import { T_LineChartData, T_Month, T_MonthNumber } from "../../types";
+import { T_LineChartData, T_Month, T_MonthNumber } from "../types";
 
 export function formatNumber(number: number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

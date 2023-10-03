@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import useCollapse from "../../hooks/useCollapse";
 import style from "./DataRangePicker.module.css";
 import { Calendar2Icon, DownArrowIcon, UpArrowIcon } from "../icons/Icons";
-import { formatDateShort, formatDateValue } from "../utils/utils";
+import { formatDateShort, formatDateValue } from "../../utils/utils";
 
 type T_VisiblePicker = "start" | "end";
 
