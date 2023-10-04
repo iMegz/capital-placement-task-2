@@ -71,6 +71,27 @@ body {
     background-color: #fff3f0;
 }
 
+.badge-lg-green,
+.badge-lg-pink {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 10px;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+.badge-lg-green {
+    border: 1px solid #cbe3bf;
+    background-color: #f2fbe9;
+}
+
+.badge-lg-pink {
+    border: 1px solid #fed8d4;
+    background-color: #ffecea;
+}
+
 /* Other */
 h1 {
     font-size: 20px;

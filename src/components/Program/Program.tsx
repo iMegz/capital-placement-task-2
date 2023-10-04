@@ -4,6 +4,7 @@ import {
     sumProgramData,
 } from "../DetailedOpportunityOverview/detailedOpportunityOverviewData";
 import IconBtn from "../IconBtn/IconBtn";
+import OpportunitiesTable from "../OpportunitiesTable/OpportunitiesTable";
 import { FileDownloadIcon, PieChartIcon } from "../icons/Icons";
 import style from "./Program.module.css";
 
@@ -48,6 +49,7 @@ const Program = (props: I_ProgramProps) => {
                 <IconBtn Icon={FileDownloadIcon} />
             </div>
             <div className={style["steps-total"]}>{renderSteps()}</div>
+            <OpportunitiesTable data={data} />
         </div>
     );
 };

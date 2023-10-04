@@ -8,7 +8,7 @@ type T_Steps = {
 
 export type T_StepKey = keyof T_Steps;
 
-type T_Opportunity = {
+export type T_Opportunity = {
     title: string;
     active: T_Steps;
     disqulified: T_Steps;
@@ -89,10 +89,3 @@ export function sumProgramData(data: T_ProgramData) {
 
     return { ...values, rejected, opportunities };
 }
-
-// rejected() {
-//     const keys = Object.keys(this.disqulified) as T_StepKey[];
-//     return keys.reduce((prev: number, curr: T_StepKey) => {
-//         return prev + this.disqulified[curr];
-//     }, 0);
-// },
