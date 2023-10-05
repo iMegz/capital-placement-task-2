@@ -45,8 +45,8 @@ const Program = (props: I_ProgramProps) => {
         <div className={`card ${style.program}`}>
             <div className={style.header}>
                 <h2 style={{ flexGrow: 1 }}>{data.title}</h2>
-                <IconBtn Icon={PieChartIcon} />
-                <IconBtn Icon={FileDownloadIcon} />
+                <IconBtn Icon={PieChartIcon} title="View Data Charts" />
+                <IconBtn Icon={FileDownloadIcon} title="CSV Download" />
             </div>
             <div className={style["steps-total"]}>{renderSteps()}</div>
             <OpportunitiesTable data={data} />
