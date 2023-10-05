@@ -7,6 +7,7 @@
     align-items: center;
     gap: 10px;
     background-color: white;
+    position: relative;
 }
 
 .sort > button {
@@ -22,4 +23,10 @@
 .icon {
     width: 24px;
     height: 24px;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
 }

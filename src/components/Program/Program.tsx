@@ -1,7 +1,7 @@
 import {
-    T_ProgramData,
+    I_ProgramData,
+    I_SumedData,
     T_StepKey,
-    sumProgramData,
 } from "../DetailedOpportunityOverview/detailedOpportunityOverviewData";
 import IconBtn from "../IconBtn/IconBtn";
 import OpportunitiesTable from "../OpportunitiesTable/OpportunitiesTable";
@@ -9,11 +9,12 @@ import { FileDownloadIcon, PieChartIcon } from "../icons/Icons";
 import style from "./Program.module.css";
 
 interface I_ProgramProps {
-    data: T_ProgramData;
+    data: I_ProgramData;
+    sumedData: I_SumedData;
 }
 const Program = (props: I_ProgramProps) => {
-    const { data } = props;
-    const { rejected, opportunities, ...steps } = sumProgramData(data);
+    const { data, sumedData } = props;
+    const { rejected, opportunities, ...steps } = sumedData;
 
     function renderSteps() {
         const keys: T_StepKey[] = [
@@ -23,7 +24,6 @@ const Program = (props: I_ProgramProps) => {
             "offer",
             "hired",
         ];
-        console.log(keys);
 
         const stepsJSX = keys.map((key) => (
             <div key={key} className={`card ${style["step-card"]}`}>

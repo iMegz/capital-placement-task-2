@@ -1,12 +1,12 @@
 import {
     T_Opportunity,
-    T_ProgramData,
+    I_ProgramData,
     T_StepKey,
 } from "../DetailedOpportunityOverview/detailedOpportunityOverviewData";
 import style from "./OpportunitiesTable.module.css";
 
 interface I_OpportunitiesTableProps {
-    data: T_ProgramData;
+    data: I_ProgramData;
 }
 
 const OpportunitiesTable = (props: I_OpportunitiesTableProps) => {

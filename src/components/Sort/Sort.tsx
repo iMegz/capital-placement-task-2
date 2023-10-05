@@ -13,28 +13,30 @@ const steps: T_SelectOption[] = [
     { value: "hired", label: "Hired" },
     { value: "rejected", label: "Rejected" },
 ];
-type T_Order = "ASC" | "DESC";
+export type T_Order = "ASC" | "DESC";
 type T_DivOmit = Omit<React.HtmlHTMLAttributes<HTMLDivElement>, "onChange">;
 type T_Sort = React.FC<I_SortProps>;
 
 interface I_SortProps extends T_DivOmit {
     onChange?: (value: string | null, order: T_Order) => void;
+    defaultOrder?: T_Order;
 }
 
 const Sort: T_Sort = (props) => {
-    const { className: cn, onChange, ...rest } = props;
+    const { className: cn, onChange, defaultOrder, ...rest } = props;
     const className = `${style.sort}${cn ? ` ${cn}` : ""}`;
 
-    const [order, setOrder] = useState<T_Order>("ASC");
+    const [order, setOrder] = useState<T_Order>(defaultOrder || "ASC");
     const [sortBy, setSortBy] = useState<string | null>(null);
     const { ref, expand, setExpand } = useCollapse();
 
     function handleSelect(value: string) {
+        setExpand(false);
         setSortBy(value);
         if (onChange) onChange(value, order);
     }
 
-    function handleSort(value: T_Order) {
+    function handleSortOrder(value: T_Order) {
         return () => {
             setOrder(value);
             if (onChange) onChange(sortBy, value);
@@ -42,20 +44,33 @@ const Sort: T_Sort = (props) => {
     }
 
     function renderDrowdown() {
-        if (expand) return <Dropdown items={steps} onSelect={handleSelect} />;
+        if (expand)
+            return (
+                <Dropdown
+                    className={style.dropdown}
+                    items={steps}
+                    onSelect={handleSelect}
+                />
+            );
     }
 
     function renderOrderButton() {
         return order === "ASC" ? (
-            <SortDescIcon className={style.icon} onClick={handleSort("DESC")} />
+            <SortDescIcon
+                className={style.icon}
+                onClick={handleSortOrder("DESC")}
+            />
         ) : (
-            <SortAscIcon className={style.icon} onClick={handleSort("ASC")} />
+            <SortAscIcon
+                className={style.icon}
+                onClick={handleSortOrder("ASC")}
+            />
         );
     }
 
     return (
-        <div className={className} {...rest}>
-            <button ref={ref} onClick={() => setExpand((state) => !state)}>
+        <div ref={ref} className={className} {...rest}>
+            <button onClick={() => setExpand((state) => !state)}>
                 {sortBy || "Sort by"}
             </button>
             {renderOrderButton()}

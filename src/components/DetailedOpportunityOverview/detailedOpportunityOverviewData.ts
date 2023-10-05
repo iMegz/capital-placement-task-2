@@ -14,12 +14,21 @@ export type T_Opportunity = {
     disqulified: T_Steps;
 };
 
-export interface T_ProgramData {
+export interface I_ProgramData {
     title: string;
     opportunities: T_Opportunity[];
 }
 
-export const data: T_ProgramData = {
+export interface I_SumedData {
+    rejected: number;
+    opportunities: T_Steps[];
+    applied: number;
+    recommended: number;
+    interview: number;
+    offer: number;
+    hired: number;
+}
+export const googleData: I_ProgramData = {
     title: "google",
     opportunities: [
         {
@@ -60,7 +69,48 @@ export const data: T_ProgramData = {
     ],
 };
 
-export function sumProgramData(data: T_ProgramData) {
+export const mircosoftData: I_ProgramData = {
+    title: "Microsoft",
+    opportunities: [
+        {
+            title: "UX Internship",
+            active: {
+                applied: 20,
+                recommended: 17,
+                interview: 4,
+                offer: 3,
+                hired: 1,
+            },
+            disqulified: {
+                applied: 7,
+                recommended: 4,
+                interview: 1,
+                offer: 1,
+                hired: 1,
+            },
+        },
+
+        {
+            title: "Art Internship",
+            active: {
+                applied: 20,
+                recommended: 17,
+                interview: 4,
+                offer: 3,
+                hired: 1,
+            },
+            disqulified: {
+                applied: 7,
+                recommended: 4,
+                interview: 1,
+                offer: 1,
+                hired: 1,
+            },
+        },
+    ],
+};
+
+export function sumProgramData(data: I_ProgramData): I_SumedData {
     const values: T_Steps = {
         applied: 0,
         hired: 0,
